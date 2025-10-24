@@ -7,3 +7,5 @@ Pour répondre à cette problématique, les grandes étapes de la démarche sont
 - Etude statistique sur les SHAP Values pour déterminer si les différences de Mean Absolute SHAP Values éventuellement constatées sont en effet significatives (test de Student -> test de Shapiro Wilk ou Q-Q plot + test de Levene).
  
 Si les Mean Absolute SHAP Values placent les variables de comportement de réservation en première position et que les tests statistiques démontrent que la différence observée avec le deuxième groupe de variables est significative, alors la problématique sera validée.
+
+Lien du dataset : https://www.kaggle.com/datasets/jessemostipak/hotel-booking-demand/data
