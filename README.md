@@ -1,11 +1,11 @@
-Le projet serait de travailler ces valeurs SHAP en profondeur afin de répondre à la problématique : Les comportements de réservation sont-ils plus impactants que d'autres paramètres sur le maintien d'une réservation d'un hôtel ?
- 
-Pour répondre à cette problématique, les grandes étapes de la démarche sont ainsi : 
-- Création d'un modèle de classification binaire performant.
-- Regroupement de mes variables prédictives en type de variables (par exemple variables socio-démographiques, variables de type d'hôtels, variables de caractéristique du séjour... et variables de comportements de réservation).
-- Evaluation des Mean Absolute SHAP Values de ces types de variables.
-- Etude statistique sur les SHAP Values pour déterminer si les différences de Mean Absolute SHAP Values éventuellement constatées sont en effet significatives (test de Student -> test de Shapiro Wilk ou Q-Q plot + test de Levene).
- 
-Si les Mean Absolute SHAP Values placent les variables de comportement de réservation en première position et que les tests statistiques démontrent que la différence observée avec le deuxième groupe de variables est significative, alors la problématique sera validée.
+Le dataset sur lequel nous travaillons est issu d'une publication de Nuno Antonio, Ana Almeida et Luis Nunes pour Data in Brief (Volume 22, Février 2019). Ce dataset agrège les données résultantes de deux sources : la première d'un hôtel de campagne et la seconde d'un hôtel situé en ville.<br>
+Le lien du dataset est le suivant : https://www.kaggle.com/datasets/jessemostipak/hotel-booking-demand/data
 
-Lien du dataset : https://www.kaggle.com/datasets/jessemostipak/hotel-booking-demand/data
+L'annulation d'une réservation séjour touristique peut-être multifactorielle : aléas familiaux, météorologiques, politiques... <br>
+Cependant, d'aucuns pourraient penser qu'il est possible, de par certaines caractéristiques des clients ou de la réservation, de prédire si oui ou non un client sera enclin à annuler une réservation. Le dataset que nous utilisons fait l'objet de nombreux travaux étudiant cette question. <br>Afin d'aller au-delà, nous avons décidé d'étudier les valeurs SHAP dans le but de répondre à la problématique suivante : **Les comportements de réservation sont-ils plus impactants que d'autres paramètres sur le maintien d'une réservation d'un hôtel ?** <br> En effet, notre premier postulat face aux variables de ce dataset est qu'un client déjà reconnu comme ayant ou non annulé une réservation dans le passé sera ou non plus enclin à annuler une prochaine réservation et qu'ainsi les variables rendant compte de ces faits ont une importance plus grande que les autres dans la classification finale du modèle. 
+
+Notre projet se déclinera de la sorte :
+- Création d'un modèle de classification binaire performant
+- Regroupement des variables prédictives en type de variables (par exemple variables socio-démographiques, variables de type d'hôtels, variables de caractéristique du séjour... et évidemment variables de comportements de réservation)
+- Evaluation des Mean Absolute SHAP Values de chacun de ces groupes de variables
+- Etude statistique sur les SHAP Values pour déterminer si les différences de Mean Absolute SHAP Values éventuellement constatées sont en effet significatives (test de Student -> test de Shapiro Wilk ou Q-Q plot + test de Levene)
